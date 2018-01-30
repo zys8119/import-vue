@@ -25,15 +25,15 @@ npm i import-vue
             <td>[string|object]</td>
             <td>
                 <pre>
-                    {
-                        fileUrl:'components/',
-                        fileType:'.vue',
-                        path:'/',
-                        name:'',
-                        component:null,
-                        title:'',
-                        //....其他参数同原生路由配置
-                    }
+{
+    fileUrl:'components/',
+    fileType:'.vue',
+    path:'/',
+    name:'',
+    component:null,
+    title:'',
+    //....其他参数同原生路由配置
+}
                 </pre>
             </td>
         </tr>
