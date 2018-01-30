@@ -1,0 +1,22 @@
+{
+  "name": "import-vue",
+  "version": "0.0.1",
+  "description": "vue路由快速引入",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zys8119/import-vue.git"
+  },
+  "author": "张云山",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zys8119/import-vue/issues"
+  },
+  "homepage": "https://github.com/zys8119/import-vue#readme",
+  "dependencies": {
+  }
+}
