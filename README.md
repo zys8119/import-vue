@@ -10,7 +10,46 @@ npm i import-vue
 
 ## 配置
 >arguments
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+          <th>argName</th>
+          <th>type</th>
+          <th>describe</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>config</td>
+            <td>[string|object]</td>
+            <td>
+                {
+                    fileUrl:'components/',
+                    fileType:'.vue',
+                    path:'/',
+                    name:'',
+                    component:null,
+                    title:'',
+                    //....其他参数同原生路由配置
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td>string</td>
+            <td>路由的名称</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>路由的路径或路由名称</td>
+        </tr>
+    </tbody>
+</table>
+
 >> config [string|object],
+
 >>> {
         fileUrl:'components/',
         fileType:'.vue',
@@ -20,13 +59,15 @@ npm i import-vue
         title:'',
         //....其他参数同原生路由配置
     }
+    
 >> title [string]
+
 >> name  [string]
 
 ## 教程
 
 >例子
-###### 以下注册路由的放的不同但结果是一样的
+###### 以下注册路由的方式不同但结果是一样的
 ```javascript
 const importVue = require('import-vue');
 import routerComponent from 'routerComponent'
