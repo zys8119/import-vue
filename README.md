@@ -24,15 +24,17 @@ npm i import-vue
             <td>config</td>
             <td>[string|object]</td>
             <td>
-                {
-                    fileUrl:'components/',
-                    fileType:'.vue',
-                    path:'/',
-                    name:'',
-                    component:null,
-                    title:'',
-                    //....其他参数同原生路由配置
-                }
+                <pre>
+                    {
+                        fileUrl:'components/',
+                        fileType:'.vue',
+                        path:'/',
+                        name:'',
+                        component:null,
+                        title:'',
+                        //....其他参数同原生路由配置
+                    }
+                </pre>
             </td>
         </tr>
         <tr>
@@ -47,22 +49,6 @@ npm i import-vue
         </tr>
     </tbody>
 </table>
-
->> config [string|object],
-
->>> {
-        fileUrl:'components/',
-        fileType:'.vue',
-        path:'/',
-        name:'',
-        component:null,
-        title:'',
-        //....其他参数同原生路由配置
-    }
-    
->> title [string]
-
->> name  [string]
 
 ## 教程
 
