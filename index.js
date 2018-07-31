@@ -1,4 +1,7 @@
-module.exports = (config,title,name) => {
+/**
+* @路由二次封装
+* */
+const importVue = (config,title,name) => {
   config = config || {};
   if(typeof config == 'string'){
     var configStr = config.split('/');
@@ -50,3 +53,28 @@ module.exports = (config,title,name) => {
 
   return configs
 }
+
+const importVueInit = (config = {},path,title,ex = {}){
+	const fileUrl = 'views/';
+	let configs = {
+		fileUrl:fileUrl,
+		name:"",
+		path:"/",
+		title:title
+	}
+	if(typeof  config == "object"){
+		for(let i in config){
+			configs[i] = config[i];
+		}
+	}else {
+		configs.name = config;
+		configs.path = path || `/${config.split("/").pop()}`;
+	}
+	for(let i in ex){
+		configs[i] = ex[i];
+	}
+	return importVue(configs);
+}
+module.exports = importVueInit;
+
+
