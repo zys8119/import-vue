@@ -1,80 +1,24 @@
-/**
-* @路由二次封装
-* */
-const importVue = (config,title,name) => {
-  config = config || {};
-  if(typeof config == 'string'){
-    var configStr = config.split('/');
-    var lastObj = configStr.pop();
-    var configStrUrl = configStr.join('/');
-    config = {
-      fileUrl:'components'+configStrUrl+'/',
-      name:lastObj,
-      title:title,
-    };
-    if(title && typeof title == 'string' &&  title[0] == "/"){
-      config.path = title;
-      config.title = title.slice(1);
-      if(name && typeof name == 'string'){
-        config.title = name;
-      }
+// const importVue = require("./import.js");
+import importVue from './import.js'
+export default (config = {},path,title,ex = {}) => {
+    const fileUrl = 'views/';
+    let configs = {
+        fileUrl:fileUrl,
+        name:"",
+        path:"/",
+        title:title
     }
-  }
-  const configs = {
-    fileUrl:'components/',
-    fileType:'.vue',
-    path:'/',
-    name:'',
-    component:null
-  }
-  const extends_if = (keyName,keyName1,CaseBool)=>{
-    keyName1 = keyName1 || keyName;
-    if(config[keyName1]){
-      if(CaseBool){
-        configs[keyName] = config[keyName1].toLocaleLowerCase();
-      }else {
-        configs[keyName] = config[keyName1]
-      }
+    if(typeof  config == "object"){
+        for(let i in config){
+            configs[i] = config[i];
+        }
+    }else {
+        configs.name = config;
+        configs.path = path || `/${config.split("/").pop()}`;
     }
-    switch (keyName1){
-      case 'name':
-        configs.path = '/'+ config[keyName1].toLocaleLowerCase()
-        break;
+    for(let i in ex){
+        configs[i] = ex[i];
     }
-  }
-  for(var i in config){
-    configs[i] = config[i];
-  }
-  configs.component = require('@/'+configs.fileUrl + configs.name+configs.fileType).default;
-  extends_if('name',null,true);
-  extends_if('name','title',true);
-  extends_if('path');
-  extends_if('component');
-
-  return configs
+    return importVue(configs);
 }
-
-const importVueInit = (config = {},path,title,ex = {}){
-	const fileUrl = 'views/';
-	let configs = {
-		fileUrl:fileUrl,
-		name:"",
-		path:"/",
-		title:title
-	}
-	if(typeof  config == "object"){
-		for(let i in config){
-			configs[i] = config[i];
-		}
-	}else {
-		configs.name = config;
-		configs.path = path || `/${config.split("/").pop()}`;
-	}
-	for(let i in ex){
-		configs[i] = ex[i];
-	}
-	return importVue(configs);
-}
-module.exports = importVueInit;
-
 
