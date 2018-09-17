@@ -1,4 +1,4 @@
-module.exports = (config, title, name) => {
+module.exports = function (config, title, name) {
     config = config || {};
     if (typeof config == 'string') {
         var configStr = config.split('/');
@@ -24,7 +24,7 @@ module.exports = (config, title, name) => {
         name: '',
         component: null
     };
-    const extends_if = (keyName, keyName1, CaseBool) => {
+    const extends_if = function (keyName, keyName1, CaseBool) {
         keyName1 = keyName1 || keyName;
         if (config[keyName1]) {
             if (CaseBool) {
