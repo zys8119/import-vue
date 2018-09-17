@@ -1,6 +1,6 @@
 // const importVue = require("./import.js");
 import importVue from './import.js'
-export default function (config = {},path,title,ex = {}) {
+export default (config = {},path,title,ex = {}) => {
     const fileUrl = 'views/';
     let configs = {
         fileUrl:fileUrl,

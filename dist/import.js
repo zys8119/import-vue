@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (config, title, name) {
     config = config || {};
     if (typeof config == 'string') {
@@ -17,14 +19,14 @@ module.exports = function (config, title, name) {
             }
         }
     }
-    const configs = {
+    var configs = {
         fileUrl: 'components/',
         fileType: '.vue',
         path: '/',
         name: '',
         component: null
     };
-    const extends_if = function (keyName, keyName1, CaseBool) {
+    var extends_if = function extends_if(keyName, keyName1, CaseBool) {
         keyName1 = keyName1 || keyName;
         if (config[keyName1]) {
             if (CaseBool) {
@@ -42,7 +44,7 @@ module.exports = function (config, title, name) {
     for (var i in config) {
         configs[i] = config[i];
     };
-    configs.component = require('@/' + configs.fileUrl + configs.name + `.vue`).default;
+    configs.component = require('@/' + configs.fileUrl + configs.name + '.vue').default;
     extends_if('name', null, true);
     extends_if('name', 'title', true);
     extends_if('path');
