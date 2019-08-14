@@ -1,12 +1,12 @@
 {
   "name": "import-vue",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "vue路由快速引入",
   "main": "dist/index.js",
   "bin": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "babel src -d dist"
+    "build": "babel src -d dist"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,7 @@
     "url": "https://github.com/zys8119/import-vue/issues"
   },
   "homepage": "https://github.com/zys8119/import-vue#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
