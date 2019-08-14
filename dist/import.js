@@ -44,7 +44,12 @@ module.exports = function (config, title, name) {
     for (var i in config) {
         configs[i] = config[i];
     };
-    configs.component = require('@/' + configs.fileUrl + configs.name + '.vue').default;
+    var vueComponent = require('@/' + configs.fileUrl + configs.name + '.vue');
+    if (vueComponent.default) {
+        configs.component = vueComponent.default;
+    } else {
+        configs.component = vueComponent;
+    }
     extends_if('name', null, true);
     extends_if('name', 'title', true);
     extends_if('path');

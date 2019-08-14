@@ -1,6 +1,6 @@
 {
   "name": "import-vue",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "vue路由快速引入",
   "main": "dist/index.js",
   "bin": "dist/index.js",
